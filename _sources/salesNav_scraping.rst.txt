@@ -1,0 +1,7 @@
+salesNav\_scraping module
+=========================
+
+.. automodule:: salesNav_scraping
+   :members:
+   :undoc-members:
+   :show-inheritance:

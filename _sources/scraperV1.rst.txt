@@ -1,0 +1,7 @@
+scraperV1 module
+================
+
+.. automodule:: scraperV1
+   :members:
+   :undoc-members:
+   :show-inheritance:

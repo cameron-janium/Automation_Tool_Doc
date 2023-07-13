@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>utility module &#8212; Linkedin Automation Tool 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="LI_scraping module" href="LI_scraping.html" />
+    <link rel="prev" title="elements module" href="elements.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-utility">
+<span id="utility-module"></span><h1>utility module<a class="headerlink" href="#module-utility" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.bezier_curve">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">bezier_curve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.bezier_curve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates intermediate X Y cordinates to a ending destination.</p>
+<p>Used in the <cite>move_mouse</cite> function to produce randomized mouse movements. This function produces random X Y cordinates that will give the mouse a random non-straight mouse movement.
+In other words, this function makes the mouse move in a random curved motion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>List</em>) – These are the points produced in the <cite>get_intermediate_points</cite> function.</p></li>
+<li><p><strong>num_samples</strong> (<em>int</em>) – The desired number of intermediate X Y cordinates to produce.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Two seperate arrays for the X and Y cordinates.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.click_element">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">click_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.click_element" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function specifically designed to click on an element defined in the <cite>elements.py</cite> file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>element</strong> – Specify an element in one of the two dictionaries in <cite>elements.py</cite>. (E.g. click_element(inspect_elements[‘connections’]))</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.delay">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">delay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'none'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.delay" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function produces randomized delays</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kind</strong> (<em>str</em>) – Pick one of the options defined in the function to produce a specilized delay</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.get_html">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">get_html</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dev_tools</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.get_html" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to get the html from any given page.</p>
+<p>This function uses chrome dev-tools to select the main parent element in the html, copies it to clipboard, and pastes the value into the <cite>html</cite> variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dev_tools</strong> (<em>bool</em>) – This is a setting that is set in the main ‘scraperV1.py’ file. This determines whether the chrome dev-tools panel is opened or not</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the html as a string</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.get_intermediate_points">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">get_intermediate_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ending_cords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.get_intermediate_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates 2 randomized points to be used in the <cite>bezier_curve</cite> function.</p>
+<p>Produces 2 random points that are somewhere inbetween the current mouse position and the desired mouse cordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ending_cords</strong> (<em>tuple</em>) – These are the destination cordinates for the mouse</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of 4 cordinate tuples. The current mouse position, the 2 randomized points, and the destination cordinates.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.get_url">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">get_url</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utility.get_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function gets the url of any page.</p>
+<p>Clicks on the top search bar of the chrome browser and copies the url. It then pastes the value into <cite>url</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns the url of the page as a string.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.keyboard_type">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">keyboard_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.keyboard_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function types text</p>
+<p>Splits the desired text into each individual characters to be typed out with random delays inbetween each key stroke.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – The text that will be typed out</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.move_mouse">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">move_mouse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">click</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.move_mouse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moves the mouse in a randomized way.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – The ending destination X cordinate.</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – The ending destination Y cordinate.</p></li>
+<li><p><strong>click</strong> (<em>bool</em>) – Set to true if you want the mouse to click at the destination</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.scroll">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">scroll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.scroll" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function takes a choses distance and splits it up into smaller scroll incriments</p>
+<p>Note: This function is unfinished and has not been tested.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.scroll_feed">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">scroll_feed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utility.scroll_feed" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function moves the mouse to the feed section on the homepage and scrolls a random distance.</p>
+<p>Note: This function hasn’t been tested a whole lot.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utility.wind_mouse">
+<span class="sig-prename descclassname"><span class="pre">utility.</span></span><span class="sig-name descname"><span class="pre">wind_mouse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">G_0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">W_0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M_0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">35</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">D_0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utility.wind_mouse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates more randomized mouse movements to be used in the <cite>move_mouse</cite> function.</p>
+<p>This function attempts to generate more human-like movements by creating randomness in mouse movements.
+See ‘<a class="reference external" href="https://ben.land/post/2021/04/25/windmouse-human-mouse-movement/">https://ben.land/post/2021/04/25/windmouse-human-mouse-movement/</a>’ for more info.</p>
+<p>WindMouse algorithm. Calls the move_mouse kwarg with each new step.
+Released under the terms of the GPLv3 license.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_x</strong> (<em>int</em>) – current mouse X position</p></li>
+<li><p><strong>start_y</strong> (<em>int</em>) – current mouse Y position</p></li>
+<li><p><strong>dest_x</strong> (<em>int</em>) – destination mouse X position</p></li>
+<li><p><strong>dest_y</strong> (<em>int</em>) – destination mouse Y position</p></li>
+<li><p><strong>G_0</strong> (<em>int</em>) – magnitude of the gravitational fornce</p></li>
+<li><p><strong>W_0</strong> (<em>int</em>) – magnitude of the wind force fluctuations</p></li>
+<li><p><strong>M_0</strong> (<em>int</em>) – maximum step size (velocity clip threshold)</p></li>
+<li><p><strong>D_0</strong> (<em>int</em>) – distance where wind behavior changes from random to damped</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Linkedin Automation Tool</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">automation_tool</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="get_element_cords.html">get_element_cords module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scraperV1.html">scraperV1 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elements.html">elements module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">utility module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LI_scraping.html">LI_scraping module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salesNav_scraping.html">salesNav_scraping module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scraper_tools.html">scraper_tools module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">automation_tool</a><ul>
+      <li>Previous: <a href="elements.html" title="previous chapter">elements module</a></li>
+      <li>Next: <a href="LI_scraping.html" title="next chapter">LI_scraping module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Cameron Crook.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/utility.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

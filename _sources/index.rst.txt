@@ -1,0 +1,66 @@
+.. Linkedin Automation Tool documentation master file, created by
+   sphinx-quickstart on Wed Jul 12 13:04:58 2023.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Linkedin Automation Tool's documentation!
+====================================================
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   install
+   modules
+   lib
+
+Overview
+--------
+The current version of the automation tool uses the python packages Beautiful Soup and pyautogui to accomplish most of the tasks. Using pyautogui, this tool interacts with Chrome and navigates through Linkedin. Beautiful Soup is used to parse html.
+
+Navigation Techniques
+~~~~~~~~~~~~~~~~~~~~~
+- Performs operating system functions (mouse movements, keyboard typing, scrolling)
+- The automator uses pyautogui to move the mouse to certain locations and click on buttons
+- Gets the html by pressing ``F12`` (This opens up chrome dev tools and displays html)  and copies the html directly from the dev tools.
+   - Uses the python package “pyperclip” to retrieve the value off of the computer's clipboard and puts it into a value to be processed by BeautifulSoup.
+
+Delays
+~~~~~~
+- Delays are placed in many places throughout the automation process.
+- These delays are completely randomized and split into types.
+   - See the navigation/delay function documentation for more info.
+
+Mouse Movements 
+~~~~~~~~~~~~~~~
+- The coordinates for all the necessary elements that will need to be used during the automating process have been documented in python dictionaries.
+   - See the navigation/elements documentation for more info.
+- The top left coordinates and the bottom right coordinates have been documented for each necessary element. This allows the program to choose a random pixel inbetween those two coordinates to craete randomize movements.
+   - **Note** The coordinates were recorded on a 1920x1080 screen. May need to adjust those coordinates.
+- Using various formulas and functions, the automator moves the mouse in a different and randomized path every single time.
+
+Keyboard Typing
+~~~~~~~~~~~~~~~
+- Pyautogui interacts with the operating system to press keys as if being pressed from the keyboard.
+- Random delays are generated between each keystroke to make it so that each keypress isn’t uniform.
+
+Scrolling
+~~~~~~~~~
+- There currently isn't a whole lot of support for scrolling but pyautogui has some helpful functions when it comes to mouse scrolling.
+
+HTML Parsing
+~~~~~~~~~~~~
+- There are many functions set up that use BS4 to parse various pages in Linkedin and Sales Navigator.
+- These parsing functions can be found at lib/scraping.
+   - The functions were designed to handle html changes that Linkedin might introduce and will return empty values for sections where html has been changed.
+
+References
+~~~~~~~~~~
+`Pyautogui Documentation <https://pyautogui.readthedocs.io/en/latest/quickstart.html>`_
+`BeautifulSoup Documentation <https://www.crummy.com/software/BeautifulSoup/bs4/doc/>`_
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

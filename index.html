@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Welcome to Linkedin Automation Tool’s documentation! &#8212; Linkedin Automation Tool 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="install.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="welcome-to-linkedin-automation-tool-s-documentation">
+<h1>Welcome to Linkedin Automation Tool’s documentation!<a class="headerlink" href="#welcome-to-linkedin-automation-tool-s-documentation" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#repository">Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">automation_tool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get_element_cords.html">get_element_cords module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scraperV1.html">scraperV1 module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lib.html">lib</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="navigation.html">navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scraping.html">scraping</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
+<p>The current version of the automation tool uses the python packages Beautiful Soup and pyautogui to accomplish most of the tasks. Using pyautogui, this tool interacts with Chrome and navigates through Linkedin. Beautiful Soup is used to parse html.</p>
+<section id="navigation-techniques">
+<h3>Navigation Techniques<a class="headerlink" href="#navigation-techniques" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Performs operating system functions (mouse movements, keyboard typing, scrolling)</p></li>
+<li><p>The automator uses pyautogui to move the mouse to certain locations and click on buttons</p></li>
+<li><dl class="simple">
+<dt>Gets the html by pressing <code class="docutils literal notranslate"><span class="pre">F12</span></code> (This opens up chrome dev tools and displays html)  and copies the html directly from the dev tools.</dt><dd><ul>
+<li><p>Uses the python package “pyperclip” to retrieve the value off of the computer’s clipboard and puts it into a value to be processed by BeautifulSoup.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="delays">
+<h3>Delays<a class="headerlink" href="#delays" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Delays are placed in many places throughout the automation process.</p></li>
+<li><dl class="simple">
+<dt>These delays are completely randomized and split into types.</dt><dd><ul>
+<li><p>See the navigation/delay function documentation for more info.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="mouse-movements">
+<h3>Mouse Movements<a class="headerlink" href="#mouse-movements" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The coordinates for all the necessary elements that will need to be used during the automating process have been documented in python dictionaries.</dt><dd><ul>
+<li><p>See the navigation/elements documentation for more info.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The top left coordinates and the bottom right coordinates have been documented for each necessary element. This allows the program to choose a random pixel inbetween those two coordinates to craete randomize movements.</dt><dd><ul>
+<li><p><strong>Note</strong> The coordinates were recorded on a 1920x1080 screen. May need to adjust those coordinates.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Using various formulas and functions, the automator moves the mouse in a different and randomized path every single time.</p></li>
+</ul>
+</section>
+<section id="keyboard-typing">
+<h3>Keyboard Typing<a class="headerlink" href="#keyboard-typing" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Pyautogui interacts with the operating system to press keys as if being pressed from the keyboard.</p></li>
+<li><p>Random delays are generated between each keystroke to make it so that each keypress isn’t uniform.</p></li>
+</ul>
+</section>
+<section id="scrolling">
+<h3>Scrolling<a class="headerlink" href="#scrolling" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>There currently isn’t a whole lot of support for scrolling but pyautogui has some helpful functions when it comes to mouse scrolling.</p></li>
+</ul>
+</section>
+<section id="html-parsing">
+<h3>HTML Parsing<a class="headerlink" href="#html-parsing" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>There are many functions set up that use BS4 to parse various pages in Linkedin and Sales Navigator.</p></li>
+<li><dl class="simple">
+<dt>These parsing functions can be found at lib/scraping.</dt><dd><ul>
+<li><p>The functions were designed to handle html changes that Linkedin might introduce and will return empty values for sections where html has been changed.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h3>
+<p><a class="reference external" href="https://pyautogui.readthedocs.io/en/latest/quickstart.html">Pyautogui Documentation</a>
+<a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup Documentation</a></p>
+</section>
+</section>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Linkedin Automation Tool</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">automation_tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib.html">lib</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="install.html" title="next chapter">Installation</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Cameron Crook.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

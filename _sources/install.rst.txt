@@ -1,0 +1,15 @@
+Installation
+============
+
+Repository
+~~~~~~~~~~~~~
+`GitHub Repository <https://github.com/janium-org/LI_automation>`_
+
+Dependencies
+~~~~~~~~~~~~~
+- pyautogui
+- beautifulsoup4
+- pyperclip
+- numpy
+- scipy
+

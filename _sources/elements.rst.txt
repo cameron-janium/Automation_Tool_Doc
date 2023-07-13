@@ -1,0 +1,24 @@
+elements module
+===============
+
+Cordinates of elements
+----------------------
+- cordinates are placed in tuple values in sets of two
+- Each tuple represents an X and Y value
+- First X and Y cordinate represents the top left corner of a specific element
+- Second X and Y cordinate represents the bottom right corner of a specific element
+
+Screen Setup
+------------
+- These cordinates were recorded using a 1920x1080 screen
+- Using a maximized chrome browser ('Windows' + 'up' keys produces the desired screen size for the browser)
+
+elements
+--------
+the `elements` variable holds the cordinates of elements on a standard maxamized browser screen with 1920x1080 resolution
+
+inspect_elements
+----------------
+the `inspect_elements` variable holds the cordinates of elements on a screen similar to `elements` but has the chrome dev-tools panel opened.
+
+These values might have to change depending on the width of the dev-tools panel.
